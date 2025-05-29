@@ -54,9 +54,9 @@ window.onload = function() {
 
     dinoImg = new Image(); //cria um novo objeto Image, que será usado para armazenar
     dinoImg.scr = "https://github.com/ImKennyYip/chrome-dinosaur-game/blob/master/img/dino.png?raw=true&quot"; 
-    dinoImg.onload = function() { //- a função onload garante que a imagem do dinossauro.
+    dinoImg.onload = function() {
         context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
-    } //- a função drawImage() desenha o dinossauro nas coordenadas dino.x e dino.y.
+    }
 
     cactus1Img = new Image();
     cactus1Img.src = "https://github.com/ImKennyYip/chrome-dinosaur-game/blob/master/img/big-cactus1.png?raw=true&quot";
@@ -68,5 +68,7 @@ window.onload = function() {
     cactus3Img.src = "https://github.com/ImKennyYip/chrome-dinosaur-game/blob/master/img/big-cactus3.png?raw=true&quot";
 
     requestAnimationFrame(update); //- inicio do loop de atualizações
-
+    setInterval(placeCactus, 1000); //config do intervalo para add cactos
+    document.addEventListener("keydown", moveDino); //adição do evento de teclado
 } 
+
