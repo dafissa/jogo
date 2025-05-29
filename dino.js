@@ -28,3 +28,4 @@ let cactus3Width = 102;
 let cactusHeight = 70; //- Todos tem a mesma altura de 70 pixels.
 let cactusX = 700; //- Os cactos começam na posição horizonta 700, longe do dinossauro.
 let cactusY = boardHeight - cactusHeight; //- 
+
