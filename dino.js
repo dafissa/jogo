@@ -27,5 +27,44 @@ let cactus3Width = 102;
 
 let cactusHeight = 70; //- Todos tem a mesma altura de 70 pixels.
 let cactusX = 700; //- Os cactos começam na posição horizonta 700, longe do dinossauro.
-let cactusY = boardHeight - cactusHeight; //- 
+let cactusY = boardHeight - cactusHeight; //- A posição vertical (cactusY) é calculada
 
+let cactus1Img;
+let cactus2Img; //- Declaramos as variáveis que irão armazenar as imagens dos três tipos
+let cactus3Img;
+
+//physics
+let velocityX = -8; //- Define a velocidade horizontal dos cactos.
+let velocityY = 0; //- é a velocidade vertical do dinossauro,que é usada no salto.
+let gravity = .4; //- adiciona um efeito de gravidade,puxando o dinossauro para o chão.
+
+let gameOver = false; //- INDICA QUE O JOGO AINDA NÃO ACABOU.
+let score = 0; //- indica que a pontuação começa em 0.
+
+window.onload = function() {
+    board = document.getElementById("board"); //- esse trecho executa quando a página é
+    board.height = boardHeight;
+    board.width = boardWidth;
+
+    context = board.getContext("2d"); //- usado para desenhar no quadro.
+
+    //desenhe o dinossauro inicial
+    //context.fillStyle="green";
+    //context.fillRect(dino.x, dino.y, dino.width, dino.height);
+
+    dinoImg = new Image(); //cria um novo objeto Image, que será usado para armazenar
+    dinoImg.scr = "https://github.com/ImKennyYip/chrome-dinosaur-game/blob/master/img/dino.png?raw=true&quot"; 
+    dinoImg.onload = function() { //- a função onload garante que a imagem do dinossauro.
+        context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
+    } //- a função drawImage() desenha o dinossauro nas coordenadas dino.x e dino.y.
+
+    cactus1Img = new Image();
+    cactus1Img.src = "https://github.com/ImKennyYip/chrome-dinosaur-game/blob/master/img/big-cactus1.png?raw=true&quot";
+
+    cactus2Img = new Image();
+    cactus2Img.src = "https://github.com/ImKennyYip/chrome-dinosaur-game/blob/master/img/big-cactus2.png?raw=true&quot";
+
+    cactus3Img = new Image();
+    cactus3Img.src = "https://github.com/ImKennyYip/chrome-dinosaur-game/blob/master/img/big-cactus3.png?raw=true&quot";
+
+}
