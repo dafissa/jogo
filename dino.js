@@ -72,3 +72,12 @@ window.onload = function() {
     document.addEventListener("keydown", moveDino); //adição do evento de teclado
 } 
 
+function update() { //chamado repetidamente para manter ojogo em funcionamento
+    requestAnimationFrame(update); //chama a próxima atualização do jogo.
+    if (gameOver) { //se gameover for true,o jogo para e não atualiza
+        return;
+
+    }
+    context.clearRect(0, 0, board.width, board.height); 
+    
+}
