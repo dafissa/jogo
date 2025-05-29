@@ -67,4 +67,6 @@ window.onload = function() {
     cactus3Img = new Image();
     cactus3Img.src = "https://github.com/ImKennyYip/chrome-dinosaur-game/blob/master/img/big-cactus3.png?raw=true&quot";
 
-}
+    requestAnimationFrame(update); //- inicio do loop de atualizações
+
+} 
