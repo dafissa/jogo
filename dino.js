@@ -79,5 +79,8 @@ function update() { //chamado repetidamente para manter ojogo em funcionamento
 
     }
     context.clearRect(0, 0, board.width, board.height); 
-    
+
+    //dino
+    velocityY += gravity; //controla a velocidade vertical do dinossauro
+    dino.y = Math.min(dino.y + velocityY, dinoY);
 }
