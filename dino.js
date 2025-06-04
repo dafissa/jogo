@@ -1,8 +1,22 @@
+//board
+let board;
+let boardWidth = 750;
+let boardHeight = 250;
+let context;
 
+//dino
+let dinoWidth = 88;
+let dinoHeight = 250;
+let dinoX = 50;
+let dinoY = boardHeight - dinoHeight;
+let dinoImg;
 
-
-
-
+let dino = {
+    x : dinoX,
+    y : dinoY,
+    width : dinoWidth,
+    height : dinoHeight
+}
 
 //dino /O personagem principal do jogo, que pode saltar para evitar obstáculos.
 let dinoWidth = 88; //- Largura do dinossauro em 88 pixels.
@@ -102,7 +116,12 @@ context.fillText (5, 50);
 
 
 function placeCactus() {
-...
+    if (gameOver) {
+        return;
+    }
+
+    //place cactus
+    let cactus
     }
     else if (placeCactusChance > .70) {
     cactus.img = cactus2Img;
