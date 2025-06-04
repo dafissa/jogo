@@ -84,3 +84,34 @@ function update() { //chamado repetidamente para manter ojogo em funcionamento
     velocityY += gravity; //controla a velocidade vertical do dinossauro
     dino.y = Math.min(dino.y + velocityY, dinoY);
 }
+
+
+
+
+
+
+function placeCactus() {
+...
+    }
+    else if (placeCactusChance > .70) {
+    cactus.img = cactus2Img;
+    cactus.width = cactus2Width
+    cactusArray.push(cactus);
+    }
+    else if (placeCactusChance > .50) {
+    cactus.img = cactus1Img;
+    cactus.width = cactus1Width;
+    cactusArray.push(cactus);
+    }
+
+    if (cactusArray.length > 5) {
+    cactusArray.shift();
+    }
+}
+
+function detectColliaion(a, b) {
+    return a.x < b.x + b.width &&
+        a.x + a.width > b.x &&
+        a.y < b.y + b.height &&
+        a.y + a.height > b.y;
+}
