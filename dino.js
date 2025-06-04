@@ -85,7 +85,18 @@ function update() { //chamado repetidamente para manter ojogo em funcionamento
     dino.y = Math.min(dino.y + velocityY, dinoY);
 }
 
+//cactus
+for (let i = 0; i < cactusArray.length; i++) {
+    let cactus = cactusArray[i];
+    cactus.x += velocityX;
+    context.drawImage(cactus.IMG, cactus.X, cactus.y, cactus.width, cactus.height);
+}
 
+//score
+context.fillStyle="black";
+context.font="20px courier";
+score++;
+context.fillText (5, 50);
 
 
 
